@@ -140,6 +140,28 @@ Annotations are stored in the __annotations__ attribute of the function as a dic
 
 9. don’t use non-ASCII characters 
 
+# 10. Brief Tour of the Standard Library
+
+1. os.getcwd()
+
+2. glob.glob('*.py')
+
+3. re.findall
+
+4. random.sample(range(100), 10)
+
+5. from datetime import date
+
+## **10.10. Performance Measurement**
+
+from timeit import Timer
+
+## **10.11. Quality Control**
+
+import doctest
+
+import unittest
+
 # The Python Language Reference
 
 # The Python Standard Library
