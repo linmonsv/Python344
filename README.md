@@ -162,6 +162,12 @@ import doctest
 
 import unittest
 
+# 14. Interactive Input Editing and History Substitution
+
+* 14.1. Tab Completion and History Editing
+
+* 14.2. Alternatives to the Interactive Interpreter
+
 # 15. Floating Point Arithmetic: Issues and Limitations
 
 * using the decimal module which implements decimal arithmetic suitable for accounting applications and high-precision applications
