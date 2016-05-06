@@ -162,6 +162,16 @@ import doctest
 
 import unittest
 
+# 15. Floating Point Arithmetic: Issues and Limitations
+
+* using the decimal module which implements decimal arithmetic suitable for accounting applications and high-precision applications
+
+* Another form of exact arithmetic is supported by the fractions module which implements arithmetic based on rational numbers (so the numbers like 1/3 can be represented exactly).
+
+* The float.as_integer_ratio() method expresses the value of a float as a fraction
+
+* almost all platforms map Python floats to IEEE-754 “double precision”. 
+
 # The Python Language Reference
 
 # The Python Standard Library
