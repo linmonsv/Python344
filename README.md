@@ -188,6 +188,20 @@ import unittest
 
 * almost all platforms map Python floats to IEEE-754 “double precision”. 
 
+# 16. Appendix
+
+### 16.1.1. Error Handling
+
+try...catch...
+
+Typing the interrupt character (usually Control-C or Delete) 
+
+### 16.1.2. Executable Python Scripts
+
+```
+#!/usr/bin/env python3.4
+```
+
 # The Python Language Reference
 
 # The Python Standard Library
