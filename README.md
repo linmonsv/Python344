@@ -162,6 +162,16 @@ import doctest
 
 import unittest
 
+# 13. What Now?
+
+1. The Python Standard Library
+
+2. Installing Python Modules 
+
+3. The Python Language Reference
+
+* http://code.activestate.com/recipes/langs/python/
+
 # 14. Interactive Input Editing and History Substitution
 
 * 14.1. Tab Completion and History Editing
