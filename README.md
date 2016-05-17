@@ -140,6 +140,77 @@ Annotations are stored in the __annotations__ attribute of the function as a dic
 
 9. don’t use non-ASCII characters 
 
+## 5.1. More on Lists
+
+Remove the item at the given position in the list, and return it.
+
+If no index is specified, a.pop() removes and returns the last item in the list
+
+## 5.1.3. List Comprehensions
+
+```Python
+squares = []
+for x in range(10):
+    squares.append(x**2)
+print(squares)
+
+squares = [x**2 for x in range(10)]
+print(squares)
+```
+
+# 5.2. The del statement
+
+```Python
+a = [-1, 1, 66.25, 333, 333, 1234.5]
+del a[0]
+print(a)
+del a[2:4]
+print(a)
+```
+
+# 5.4. Sets
+
+A set is an unordered collection with no duplicate elements
+
+# 5.5. Dictionaries
+
+# 5.6. Looping Techniques
+
+```Python
+
+# When looping through dictionaries
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+
+# When looping through a sequence
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v)
+
+# To loop over two or more sequences at the same time
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+    print('What is your {0}?  It is {1}.'.format(q, a))
+
+# To loop over a sequence in reverse
+for i in reversed(range(1, 10, 2)):
+    print(i)
+
+# To loop over a sequence in sorted order
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for f in sorted(set(basket)):
+    print(f)
+
+# To change a sequence you are iterating over while inside the loop
+words = ['cat', 'window', 'defenestrate']
+for w in words[:]:  # Loop over a slice copy of the entire list.
+    if len(w) > 6:
+        words.insert(0, w)
+print(words)
+
+```
+
 # 10. Brief Tour of the Standard Library
 
 1. os.getcwd()

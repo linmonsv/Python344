@@ -74,6 +74,9 @@ birthday = date(1987, 3, 25)
 age = now - birthday
 print(age.days)
 
+left = date(2016,7,21) - now
+print(left)
+
 # 10.9. Data Compression
 import zlib
 s = b'witch which has which witches wrist watch'
