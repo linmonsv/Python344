@@ -233,6 +233,20 @@ import doctest
 
 import unittest
 
+# 11.5. Logging
+
+New filters can select different routing based on message priority: 
+
+DEBUG, INFO, WARNING, ERROR, and CRITICAL.
+
+# 11.8. Decimal Floating Point Arithmetic
+
+* financial applications and other uses which require exact decimal representation, 
+* control over precision, 
+* control over rounding to meet legal or regulatory requirements, 
+* tracking of significant decimal places, or 
+* applications where the user expects the results to match calculations done by hand. 
+
 # 13. What Now?
 
 1. The Python Standard Library
