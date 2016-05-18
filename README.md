@@ -247,6 +247,83 @@ DEBUG, INFO, WARNING, ERROR, and CRITICAL.
 * tracking of significant decimal places, or 
 * applications where the user expects the results to match calculations done by hand. 
 
+# 12.2. Creating Virtual Environments
+
+To create a virtualenv, decide upon a directory where you want to place it and run pyvenv with the directory path:
+
+```
+pyvenv tutorial-env
+```
+
+Once you’ve created a virtual environment, you need to activate it.
+
+```
+# On Windows, run:
+
+tutorial-env/Scripts/activate
+
+# On Unix or MacOS, run:
+
+source tutorial-env/bin/activate
+
+```
+
+'''
+-> source ~/envs/tutorial-env/bin/activate
+(tutorial-env) -> python
+Python 3.4.3+ (3.4:c7b9645a6f35+, May 22 2015, 09:31:25)
+  ...
+>>> import sys
+>>> sys.path
+['', '/usr/local/lib/python34.zip', ...,
+'~/envs/tutorial-env/lib/python3.4/site-packages']
+>>>
+'''
+
+# 12.3. Managing Packages with pip
+
+```
+(tutorial-env) -> pip search astronomy
+```
+
+## pip has a number of subcommands:
+* “search”,
+* “install”,
+* “uninstall”,
+* “freeze”,
+* etc. (Consult the Installing Python Modules guide for complete documentation for pip.)
+
+```
+# the latest version
+pip install novas
+
+# a specific version
+pip install requests==2.6.0
+
+# upgrade
+-> pip install --upgrade requests
+
+# pip uninstall
+
+# display information about a particular package
+(tutorial-env) -> pip show requests
+
+# display all of the packages
+(tutorial-env) -> pip list
+
+# pip freeze will produce a similar list of the installed packages, but the output uses the format that pip install expects
+(tutorial-env) -> pip list
+novas (3.1.1.3)
+numpy (1.9.2)
+pip (7.0.3)
+requests (2.7.0)
+setuptools (16.0)
+
+# The requirements.txt can then be committed to version control and shipped as part of an application.
+# Users can then install all the necessary packages with install -r:
+-> pip install -r requirements.txt
+```
+
 # 13. What Now?
 
 1. The Python Standard Library
