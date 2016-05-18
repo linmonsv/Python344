@@ -211,6 +211,71 @@ print(words)
 
 ```
 
+# 6.1. More on Modules
+# Note
+For efficiency reasons,
+each module is only imported once per interpreter session.
+Therefore, if you change your modules, you must restart the interpreter –
+or, if it’s just one module you want to test interactively, use imp.reload(),
+e.g. import imp; imp.reload(modulename).
+
+
+# 6.1.2. The Module Search Path
+
+# 6.1.3. “Compiled” Python files
+
+__pycache__ directory
+
+Also, the compiled modules are platform-independent, so the same library can be shared among systems with different architectures
+
+* You can use the -O or -OO
+
+* A program doesn’t run any faster when it is read from a .pyc or .pyo file than when it is read from a .py file;
+the only thing that’s faster about .pyc or .pyo files is the speed with which they are loaded.
+
+* The module compileall can create .pyc files (or .pyo files when -O is used) for all modules in a directory.
+
+* more detail in PEP 3147
+
+# 6.2. Standard Modules
+```
+>>> import sys
+>>> sys.ps1
+'>>> '
+>>> sys.ps2
+'... '
+>>> sys.ps1 = 'C> '
+C> print('Yuck!')
+Yuck!
+C>
+```
+
+# 6.4. Packages
+
+1. When importing the package, Python searches through the directories on sys.path looking for the package subdirectory.
+
+2. The __init__.py files are required to make Python treat the directories as containing packages
+
+## 6.4.1. Importing * From a Package
+
+* time
+
+* size
+
+# __init__.py
+# This would mean that from sound.effects import * would import the three named submodules of the sound package.
+'''
+__all__ = ["echo", "surround", "reverse"]
+'''
+
+## 6.4.2. Intra-package References
+
+```python
+from . import echo
+from .. import formats
+from ..filters import equalizer
+```
+
 # 10. Brief Tour of the Standard Library
 
 1. os.getcwd()
