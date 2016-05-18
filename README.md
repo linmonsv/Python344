@@ -276,6 +276,54 @@ from .. import formats
 from ..filters import equalizer
 ```
 
+# 7.1. Fancier Output Formatting
+```python
+# Passing an integer after the ':' will cause that field to be a minimum number of characters wide
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+for name, phone in table.items():
+    print('{0:10} ==> {1:10d}'.format(name, phone))
+
+# be formatted by name instead of by position
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
+print('Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; '
+      'Dcab: {0[Dcab]:d}'.format(table))
+```
+but the 'd' what's means ?
+
+# 7.2. Reading and Writing Files
+```python
+f = open('workfile', 'w')
+
+# 7.2.1. Methods of File Objects
+f.read()
+f.readline()
+
+for line in f:
+    print(line, end='')
+
+f.write('This is a test\n')
+
+value = ('the answer', 42)
+s = str(value)
+f.write(s)
+
+```
+
+# It is good practice to use the with keyword when dealing with file objects
+
+# 7.2.2. Saving structured data with json
+# Note The JSON format is commonly used by modern applications to allow for data exchange.
+# Many programmers are already familiar with it, which makes it a good choice for interoperability.
+```
+>>> json.dumps([1, 'simple', 'list'])
+'[1, "simple", "list"]'
+
+json.dump(x, f)
+
+x = json.load(f)
+
+```
+
 # 10. Brief Tour of the Standard Library
 
 1. os.getcwd()
