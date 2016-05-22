@@ -324,6 +324,23 @@ x = json.load(f)
 
 ```
 
+# 8. Errors and Exceptions
+
+There are (at least) two distinguishable kinds of errors: syntax errors and exceptions.
+
+* A finally clause is always executed before leaving the try statement, 
+* whether an exception has occurred or not. 
+
+## 8.7. Predefined Clean-up Actions
+```python
+for line in open("myfile.txt"):
+    print(line, end="")
+
+with open("myfile.txt") as f:
+    for line in f:
+        print(line, end="")
+```
+
 # 10. Brief Tour of the Standard Library
 
 1. os.getcwd()
