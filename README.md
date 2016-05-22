@@ -341,6 +341,65 @@ with open("myfile.txt") as f:
         print(line, end="")
 ```
 
+### 9.3.5. Class and Instance Variables
+* tricks = []             # mistaken use of a class variable
+
+# 9.5. Inheritance
+
+# 9.5.1. Multiple Inheritance
+
+# 9.6. Private Variables
+there is a convention that is followed by most Python code: 
+* a name prefixed with an underscore (e.g. _spam) 
+should be treated as a non-public part of the API
+```python
+class Mapping:
+    def __init__(self, iterable):
+        self.items_list = []
+        self.__update(iterable)
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+    __update = update   # private copy of original update() method
+
+class MappingSubclass(Mapping):
+
+    def update(self, keys, values):
+        # provides new signature for update()
+        # but does not break __init__()
+        for item in zip(keys, values):
+            self.items_list.append(item)
+```
+
+# 9.7. Odds and Ends
+```python
+class Employee:
+    pass
+
+john = Employee() # Create an empty employee record
+
+# Fill the fields of the record
+john.name = 'John Doe'
+john.dept = 'computer lab'
+john.salary = 1000
+```
+
+# 9.9. Iterators
+This style of access is clear, concise, and convenient. 
+The use of iterators pervades and unifies Python. 
+Behind the scenes, 
+the for statement calls iter() on the container object. 
+The function returns an iterator object 
+that defines the method __next__() 
+which accesses elements in the container one at a time. 
+When there are no more elements, 
+__next__() raises a StopIteration exception 
+which tells the for loop to terminate. 
+You can call the __next__() method 
+using the next() built-in function; 
+
 # 10. Brief Tour of the Standard Library
 
 1. os.getcwd()
